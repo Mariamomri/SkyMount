@@ -26,7 +26,7 @@
                 <td>{{ mountain.slug }}</td>
                 <td>{{ mountain.pays }}</td>
                 <td>{{ mountain.H }}</td>
-                <td>{{ mountain.img }}</td>
+                <td><img src="{{ asset('images/' ~ mountain.img) }}" alt="{{ mountain.name }}" width="100"></td>
                 <td>{{ mountain.description }}</td>
                 <td>
                     <a href="{{ path('app_mountain_show', {'id': mountain.id}) }}">show</a>
