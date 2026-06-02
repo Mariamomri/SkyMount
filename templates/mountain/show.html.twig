@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mountain{% endblock %}
+
+{% block body %}
+    <h1>Mountain</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ mountain.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ mountain.name }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ mountain.slug }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ mountain.pays }}</td>
+            </tr>
+            <tr>
+                <th>H</th>
+                <td>{{ mountain.H }}</td>
+            </tr>
+            <tr>
+                <th>Img</th>
+                <td>{{ mountain.img }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ mountain.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_mountain_index') }}">back to list</a>
+
+    <a href="{{ path('app_mountain_edit', {'id': mountain.id}) }}">edit</a>
+
+    {{ include('mountain/_delete_form.html.twig') }}
+{% endblock %}

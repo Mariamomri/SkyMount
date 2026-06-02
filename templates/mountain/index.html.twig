@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mountain index{% endblock %}
+
+{% block body %}
+    <h1>Mountain index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Pays</th>
+                <th>H</th>
+                <th>Img</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mountain in mountains %}
+            <tr>
+                <td>{{ mountain.id }}</td>
+                <td>{{ mountain.name }}</td>
+                <td>{{ mountain.slug }}</td>
+                <td>{{ mountain.pays }}</td>
+                <td>{{ mountain.H }}</td>
+                <td>{{ mountain.img }}</td>
+                <td>{{ mountain.description }}</td>
+                <td>
+                    <a href="{{ path('app_mountain_show', {'id': mountain.id}) }}">show</a>
+                    <a href="{{ path('app_mountain_edit', {'id': mountain.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_mountain_new') }}">Create new</a>
+{% endblock %}
