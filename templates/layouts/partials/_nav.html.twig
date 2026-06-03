@@ -1,0 +1,60 @@
+<header class="sk-header">
+    <nav class="sk-nav">
+
+        <a href="{{ path('app_home') }}" class="sk-logo">
+            <span class="sk-logo-text">SKYMOUNT</span>
+        </a>
+
+        <ul class="sk-menu">
+            <li>
+                <a href="{{ path('app_home') }}"
+                    class="sk-link {{ app.current_route == 'app_home' ? 'sk-link--active' : '' }}">
+                    Accueil
+                </a>
+            </li>
+            <li class="sk-dropdown">
+                <button class="sk-link sk-dropdown__btn {{ app.current_route starts with 'app_mountain' ? 'sk-link--active' : '' }}">
+                    Mountains
+                    <span class="sk-dropdown__arrow">▾</span>
+                </button>
+                <ul class="sk-dropdown__menu">
+                    <li>
+                        <a href="{{ path('app_mountain_index') }}" class="sk-dropdown__item">
+                            Liste Mountains
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_mountain_new') }}" class="sk-dropdown__item">
+                            ➕ Ajouter
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <button class="sk-burger" id="sk-burger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+
+    <div class="sk-mobile-menu" id="sk-mobile-menu">
+        <a href="{{ path('app_home') }}"
+          class="sk-mobile-link {{ app.current_route == 'app_home' ? 'sk-mobile-link--active' : '' }}">
+            Accueil
+        </a>
+        <div class="sk-mobile-group">
+            <span class="sk-mobile-label">Mountains</span>
+            <a href="{{ path('app_mountain_index') }}" class="sk-mobile-link sk-mobile-link--sub
+                {{ app.current_route == 'app_mountain_index' ? 'sk-mobile-link--active' : '' }}">
+                Liste Mountains
+            </a>
+            <a href="{{ path('app_mountain_new') }}" class="sk-mobile-link sk-mobile-link--sub
+                {{ app.current_route == 'app_mountain_new' ? 'sk-mobile-link--active' : '' }}">
+                ➕ Ajouter
+            </a>
+        </div>
+    </div>
+</header>
